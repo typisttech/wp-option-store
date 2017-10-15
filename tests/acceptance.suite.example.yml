@@ -1,0 +1,11 @@
+modules:
+    config:
+        WPDb:
+            dsn: 'mysql:host=wp-option-store.local:4018;dbname=local'
+            user: 'root'
+            password: 'root'
+        WPBrowser:
+            url: 'http://wp-option-store.local'
+            adminUsername: 'admin'
+            adminPassword: 'password'
+            adminPath: '/wp-admin'

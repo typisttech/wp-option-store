@@ -1,0 +1,12 @@
+modules:
+    config:
+        WPDb:
+            dsn: 'mysql:host=wp-option-store.local:4018;dbname=local'
+            user: 'root'
+            password: 'root'
+            url: 'http://wp-option-store.local'
+        WordPress:
+            wpRootFolder: '/Users/me/Local Sites/wpadminnotices/app/public'
+            adminUsername: 'admin'
+            adminPassword: 'password'
+            adminPath: '/wp-admin'

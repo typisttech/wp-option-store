@@ -1,0 +1,9 @@
+modules:
+    config:
+        WPLoader:
+            wpRootFolder: "/Users/me/Local Sites/wpadminnotices/app/public"
+            dbName: "local"
+            dbHost: "wp-option-store.local:4018"
+            dbUser: "root"
+            dbPassword: "root"
+            domain: "wp-option-store.local"
