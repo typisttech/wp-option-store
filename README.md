@@ -67,15 +67,6 @@ Yes, if put all `WP Option Store` classes under your own namespace to avoid clas
 - [imposter-plugin](https://github.com/Typisttech/imposter-plugin)
 - [mozart](https://github.com/coenjacobs/mozart)
 
-### Do you have a demo plugin that use this package?
-
-You can install this demo plugin by
-```bash
-$ wp plugin install https://github.com/TypistTech/wp-option-store/archive/nightly.zip --activate
-```
-
-Check out [`wp-option-store.php`](./wp-option-store.php). We use it for acceptance tests.
-
 ### Do you have real life examples that use this package?
 
 Here you go:
