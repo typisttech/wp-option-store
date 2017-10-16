@@ -21,9 +21,21 @@ A simplified OOP implementation of the WordPress Options API.
 - [The Goals, or What This Package Does?](#the-goals-or-what-this-package-does)
 - [Install](#install)
 - [Usage](#usage)
+  - [Example](#example)
+  - [ConstantStrategy](#constantstrategy)
+  - [DatabaseStrategy](#databasestrategy)
+  - [OptionStore](#optionstore)
+    - [`__construct(StrategyInterface ...$strategies)`](#__constructstrategyinterface-strategies)
+    - [`get(string $optionName)`](#getstring-optionname)
+  - [Type casting](#type-casting)
+  - [FilteredOptionStore](#filteredoptionstore)
+    - [`get(string $optionName)`](#getstring-optionname-1)
+  - [Factory](#factory)
+    - [`build(): FilteredOptionStore`](#build-filteredoptionstore)
 - [Frequently Asked Questions](#frequently-asked-questions)
+  - [Can I implement my own strategy classes?](#can-i-implement-my-own-strategy-classes)
+  - [Can I change the order of the strategies?](#can-i-change-the-order-of-the-strategies)
   - [Can two different plugins use this package at the same time?](#can-two-different-plugins-use-this-package-at-the-same-time)
-  - [Do you have a demo plugin that use this package?](#do-you-have-a-demo-plugin-that-use-this-package)
   - [Do you have real life examples that use this package?](#do-you-have-real-life-examples-that-use-this-package)
 - [Support!](#support)
   - [Donate via PayPal *](#donate-via-paypal-)
@@ -57,8 +69,163 @@ You should put all `WP Option Store` classes under your own namespace to avoid c
 
 ## Usage
 
+### Example
+
+```php
+use TypistTech\WPOptionStore\Factory;
+
+
+$filteredOptionStore = Factory::build();
+
+// To get an option from strategies.
+$filteredOptionStore->get('my_option');
+
+// To get an option and perform type cast.
+$filteredOptionStore->getBoolean('my_boolean_option');
+$filteredOptionStore->getInt('my_integer_option');
+$filteredOptionStore->getString('my_string_option');
+$filteredOptionStore->getArray('my_array_option');
+```
+
+### ConstantStrategy
+
+This strategy gets options from [PHP constants](http://php.net/manual/en/function.constant.php).
+
+```php
+define('MY_OPTION', 'abc123');
+
+$strategy = new ConstantStrategy();
+
+$value1 = $strategy->get('my_option');
+// $value1 === 'abc123';
+
+$value2 = $strategy->get('my_non_exist_option');
+// $value2 === null;
+```
+
+### DatabaseStrategy
+
+This strategy gets options from [WordPress Options API](https://codex.wordpress.org/Options_API).
+
+```php
+update_option('my_option', 'abc123');
+
+$strategy = new DatabaseStrategy();
+
+$value1 = $strategy->get('my_option');
+// $value1 === 'abc123';
+
+$value2 = $strategy->get('my_non_exist_option');
+// $value2 === null;
+```
+
+### OptionStore
+
+This class gets option values from strategies.
+
+#### `__construct(StrategyInterface ...$strategies)`
+
+`OptionStore` constructor.
+
+ * @param StrategyInterface[] ...$strategies Strategies that get option values.
+
+```php
+$databaseStrategy = new DatabaseStrategy();
+$constantStrategy = new ConstantStrategy();
+$optionStore = new OptionStore($constantStrategy, $databaseStrategy);
+```
+
+Note: Strategies order matters!
+
+#### `get(string $optionName)`
+
+Get an option value.
+ 
+ * @param string $optionName Name of option to retrieve.
+ 
+```php
+// It returns the first non-null value from strategies.
+define('MY_OPTION', 'abc');
+update_option('my_option', 'xyz');
+
+$value1 = $optionStore->get('my_option');
+// $value1 === 'abc';
+
+// It returns `null` when option not found.
+$value2 = $optionStore->get('my_non_exist_option');
+// $value2 === null;
+```
+
+### Type casting
+
+`OptionStore` provides several helper methods for type casting.
+
+```php
+$optionStore->getBoolean('my_boolean_option');
+$optionStore->getInt('my_integer_option');
+$optionStore->getString('my_string_option');
+$optionStore->getArray('my_array_option');
+```
+
+### FilteredOptionStore
+
+This is a subclass of `OptionStore`.
+
+#### `get(string $optionName)`
+
+Get an option value.
+ 
+ * @param string $optionName Name of option to retrieve.
+ 
+```php
+// It returns the first non-null value from strategies, 
+// and applies filters.
+define('MY_OPTION', 'abc');
+update_option('my_option', 'xyz');
+
+add_filter('my_option', function($value) {
+    return 'filtered ' . $value;
+});
+
+$value = $filteredOptionStore->get('my_option');
+// $value === 'filtered abc';
+```
+
+Note: Filters are applied before type casting. 
+
+### Factory
+
+Factory is a helper class to reduce boilerplate code for those who use default strategies. 
+If you use a [custom strategy](#can-i-implement-my-own-strategy-classes) or [reorder the strategies](#can-i-change-the-order-of-the-strategies), don't use this class.
+
+#### `build(): FilteredOptionStore`
+
+```php
+$filteredOptionStore = Factory::build();
+```
 
 ## Frequently Asked Questions
+
+### Can I implement my own strategy classes?
+
+Of course! Just implements the `StrategyInterface`.
+
+Take a look at classes `ConstantStrategy` and `DatabaseStrategy` as well as their tests for example implementations of `StrategyInterface`.
+
+If you'd like to create a open-source package to do this to help others, open a [new issue](https://github.com/TypistTech/wp-option-store/issues/new) to let us know, we'd love to help you with it.
+
+### Can I change the order of the strategies?
+
+Why not? Don't use `Factory`.
+
+```php
+// Order matters!
+$optionStore = new FilteredOptionStore(
+    new MyStrategy1(),
+    new MyStrategy2(),
+    new MyStrategy3(),
+);
+```
 
 ### Can two different plugins use this package at the same time?
 
