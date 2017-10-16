@@ -23,11 +23,11 @@ final class Factory
     /**
      * Set up option store with default strategies.
      *
-     * @return OptionStore
+     * @return FilteredOptionStore
      */
-    public static function build(): OptionStore
+    public static function build(): FilteredOptionStore
     {
-        return new OptionStore(
+        return new FilteredOptionStore(
             new ConstantStrategy(),
             new DatabaseStrategy()
         );

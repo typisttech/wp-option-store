@@ -20,9 +20,9 @@ class FactoryTest extends WPTestCase
     }
 
     /** @test */
-    public function it_builds_an_option_store_with_strategies()
+    public function it_builds_a_filtered_option_store_with_strategies()
     {
-        $expected = new OptionStore(
+        $expected = new FilteredOptionStore(
             new ConstantStrategy(),
             new DatabaseStrategy()
         );
