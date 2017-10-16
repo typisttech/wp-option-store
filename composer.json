@@ -44,11 +44,6 @@
         }
     },
     "scripts": {
-        "build": [
-            "rm -fr vendor",
-            "composer install --no-dev --prefer-dist --no-suggest",
-            "composer archive --format=zip --dir=release --file=wp-option-store"
-        ],
         "check-style": "phpcs --standard=ruleset.xml --colors -p -s .",
         "fix-style": "phpcbf --standard=ruleset.xml -p --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 .",
         "install-dev-extra": [
@@ -70,18 +65,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "archive": {
-        "exclude": [
-            "/*",
-            ".*",
-            "!/languages",
-            "!/partials",
-            "!/src",
-            "!/vendor",
-            "!/LICENSE",
-            "!/README.txt",
-            "!/*.php"
-        ]
     }
 }
