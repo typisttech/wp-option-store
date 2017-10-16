@@ -134,6 +134,10 @@
         <exclude-pattern>/tests/*</exclude-pattern>
     </rule>
 
+    <rule ref="Squiz.Commenting.FunctionComment.MissingParamTag">
+        <exclude-pattern>/tests/*</exclude-pattern>
+    </rule>
+
     <rule ref="WordPress.VIP.RestrictedVariables">
         <exclude-pattern>/tests/*</exclude-pattern>
     </rule>

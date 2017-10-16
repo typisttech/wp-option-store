@@ -4,14 +4,14 @@
  *
  * A simplified OOP implementation of the WordPress Options API.
  *
- * @package TypistTech\WPOptionStore
+ * @package   TypistTech\WPOptionStore
  *
- * @author Typist Tech <wp-option-store@typist.tech>
+ * @author    Typist Tech <wp-option-store@typist.tech>
  * @copyright 2017 Typist Tech
- * @license GPL-2.0+
+ * @license   GPL-2.0+
  *
- * @see https://www.typist.tech/projects/wp-option-store
- * @see https://github.com/TypistTech/wp-option-store
+ * @see       https://www.typist.tech/projects/wp-option-store
+ * @see       https://github.com/TypistTech/wp-option-store
  */
 
 /**
