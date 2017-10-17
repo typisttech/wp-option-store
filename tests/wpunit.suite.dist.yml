@@ -19,8 +19,6 @@ modules:
             domain: 'wordpress.dev'
             adminEmail: 'admin@wordpress.dev'
             title: "Test"
-            plugins: ['wp-option-store/wp-option-store.php']
-            activatePlugins: ['wp-option-store/wp-option-store.php']
 coverage:
     enabled: true
     whitelist:
