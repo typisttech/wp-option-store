@@ -1,8 +1,19 @@
 # Change Log
 
-## [0.1.0](https://github.com/TypistTech/wp-option-store/tree/0.1.0) (2017-10-17)
+## [0.1.1](https://github.com/TypistTech/wp-option-store/tree/0.1.1) (2017-10-27)
+[Full Changelog](https://github.com/TypistTech/wp-option-store/compare/0.1.0...0.1.1)
+
 **Merged pull requests:**
 
+- Misc: Typist Tech code style [\#13](https://github.com/TypistTech/wp-option-store/pull/13) ([TangRufus](https://github.com/TangRufus))
+- Scrutinizer: Remove `align\_assignments` [\#10](https://github.com/TypistTech/wp-option-store/pull/10) ([TangRufus](https://github.com/TangRufus))
+- TravisCI: Do not install Nginx [\#9](https://github.com/TypistTech/wp-option-store/pull/9) ([TangRufus](https://github.com/TangRufus))
+- Codeception: Remove unnecessary config [\#8](https://github.com/TypistTech/wp-option-store/pull/8) ([TangRufus](https://github.com/TangRufus))
+
+## [0.1.0](https://github.com/TypistTech/wp-option-store/tree/0.1.0) (2017-10-16)
+**Merged pull requests:**
+
+- Version bump 0.1.0 [\#7](https://github.com/TypistTech/wp-option-store/pull/7) ([TangRufus](https://github.com/TangRufus))
 - Add documents [\#6](https://github.com/TypistTech/wp-option-store/pull/6) ([TangRufus](https://github.com/TangRufus))
 - Remove unnecessary [\#4](https://github.com/TypistTech/wp-option-store/pull/4) ([TangRufus](https://github.com/TangRufus))
 - Add `FilteredOptionStore` [\#3](https://github.com/TypistTech/wp-option-store/pull/3) ([TangRufus](https://github.com/TangRufus))
