@@ -58,7 +58,7 @@ Extending WordPress Options API, read options from places other than database, t
 
 ## The Goals, or What This Package Does?
 
-WordPress Option API only allows you `get_option` from database. This package is for those who not not accepting the status quo.
+WordPress Option API only allows you `get_option` from database. This package is for those who not accepting the status quo.
 
 ## Install
 
