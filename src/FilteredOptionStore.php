@@ -2,7 +2,7 @@
 /**
  * WP Option Store
  *
- * A simplified OOP implementation of the WordPress Options API.
+ * Extending WordPress Options API, read options from places other than database, the OOP way.
  *
  * @package   TypistTech\WPOptionStore
  *

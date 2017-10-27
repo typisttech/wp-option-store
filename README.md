@@ -12,7 +12,7 @@
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/wp-option-store/)
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://www.typist.tech/contact/)
 
-A simplified OOP implementation of the WordPress Options API.
+Extending WordPress Options API, read options from places other than database, the OOP way.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -54,6 +54,8 @@ A simplified OOP implementation of the WordPress Options API.
 
 ## The Goals, or What This Package Does?
 
+WordPress Option API only allows you `get_option` from database. This package is for those who not not accepting the status quo.
+
 ## Install
 
 Installation should be done via composer, details of how to install composer can be found at [https://getcomposer.org/](https://getcomposer.org/).
@@ -74,10 +76,18 @@ You should put all `WP Option Store` classes under your own namespace to avoid c
 ```php
 use TypistTech\WPOptionStore\Factory;
 
-
+// By default, the `Factory` adds 2 strategies (order matters):
+//  1. ConstantStrategy
+//  2. DatabaseStrategy
 $filteredOptionStore = Factory::build();
 
-// To get an option from strategies.
+// To get an option from strategies:
+//  1. Read `MY_OPTION` constant
+//  2. If (1) is not `null`, jump to (6)
+//  3. Read from `get_option('my_option')`, the normal WordPress Options API
+//  4. If (3) is not `null`, jump to (6)
+//  5. We have tried all strategies, pass `null` to (6)
+//  6. Pass whatever we have read (could be null) through `apply_filters('my_option', $whateverWeHaveRead);`
 $filteredOptionStore->get('my_option');
 
 // To get an option and perform type cast.
@@ -118,6 +128,8 @@ $value1 = $strategy->get('my_option');
 $value2 = $strategy->get('my_non_exist_option');
 // $value2 === null;
 ```
+
+**Important**: An unset value should be `null` instead of WordPress' default `false`.
 
 ### OptionStore
 
