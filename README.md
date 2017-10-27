@@ -12,7 +12,7 @@
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/wp-option-store/)
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://www.typist.tech/contact/)
 
-A simplified OOP implementation of the WordPress Options API.
+Extending WordPress Options API, read options from places other than database, the OOP way.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -35,10 +35,14 @@ A simplified OOP implementation of the WordPress Options API.
 - [Frequently Asked Questions](#frequently-asked-questions)
   - [Can I implement my own strategy classes?](#can-i-implement-my-own-strategy-classes)
   - [Can I change the order of the strategies?](#can-i-change-the-order-of-the-strategies)
+  - [Is this a plugin?](#is-this-a-plugin)
+  - [What to do when wp.org plugin team tell me to clean up the `vendor` folder?](#what-to-do-when-wporg-plugin-team-tell-me-to-clean-up-the-vendor-folder)
   - [Can two different plugins use this package at the same time?](#can-two-different-plugins-use-this-package-at-the-same-time)
   - [Do you have real life examples that use this package?](#do-you-have-real-life-examples-that-use-this-package)
 - [Support!](#support)
   - [Donate via PayPal *](#donate-via-paypal-)
+  - [Donate Monero](#donate-monero)
+  - [Mine me some Monero](#mine-me-some-monero)
   - [Why don't you hire me?](#why-dont-you-hire-me)
   - [Want to help in other way? Want to be a sponsor?](#want-to-help-in-other-way-want-to-be-a-sponsor)
 - [Developing](#developing)
@@ -53,6 +57,8 @@ A simplified OOP implementation of the WordPress Options API.
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## The Goals, or What This Package Does?
+
+WordPress Option API only allows you `get_option` from database. This package is for those who not accepting the status quo.
 
 ## Install
 
@@ -74,10 +80,18 @@ You should put all `WP Option Store` classes under your own namespace to avoid c
 ```php
 use TypistTech\WPOptionStore\Factory;
 
-
+// By default, the `Factory` adds 2 strategies (order matters):
+//  1. ConstantStrategy
+//  2. DatabaseStrategy
 $filteredOptionStore = Factory::build();
 
-// To get an option from strategies.
+// To get an option from strategies:
+//  1. Read `MY_OPTION` constant
+//  2. If (1) is not `null`, jump to (6)
+//  3. Read from `get_option('my_option')`, the normal WordPress Options API
+//  4. If (3) is not `null`, jump to (6)
+//  5. We have tried all strategies, pass `null` to (6)
+//  6. Pass whatever we have read (could be null) through `apply_filters('my_option', $whateverWeHaveRead);`
 $filteredOptionStore->get('my_option');
 
 // To get an option and perform type cast.
@@ -118,6 +132,8 @@ $value1 = $strategy->get('my_option');
 $value2 = $strategy->get('my_non_exist_option');
 // $value2 === null;
 ```
+
+**Important**: An unset value should be `null` instead of WordPress' default `false`.
 
 ### OptionStore
 
