@@ -7,7 +7,7 @@
  * @package   TypistTech\WPOptionStore
  *
  * @author    Typist Tech <wp-option-store@typist.tech>
- * @copyright 2017 Typist Tech
+ * @copyright 2017-2018 Typist Tech
  * @license   GPL-2.0+
  *
  * @see       https://typist.tech/projects/wp-option-store
