@@ -7,6 +7,8 @@
 /tests/*.suite.yml
 /tests/_output/*
 /tests/_support/_generated/
+/tests/_tmp/*
+!/tests/_tmp/.gitkeep
 
 ### Composer ###
 /composer.lock
