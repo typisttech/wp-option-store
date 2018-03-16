@@ -1,10 +1,24 @@
 # Change Log
 
-## [0.1.1](https://github.com/TypistTech/wp-option-store/tree/0.1.1) (2017-10-27)
-[Full Changelog](https://github.com/TypistTech/wp-option-store/compare/0.1.0...0.1.1)
+## [0.2.0](https://github.com/TypistTech/wp-option-store/tree/0.2.0) (2018-03-17)
+[Full Changelog](https://github.com/TypistTech/wp-option-store/compare/0.1.1...0.2.0)
 
 **Merged pull requests:**
 
+- Bump PHP requirement to ^7.1; Fix tests [\#17](https://github.com/TypistTech/wp-option-store/pull/17) ([TangRufus](https://github.com/TangRufus))
+- Misc: Update TravisCI & readme & info [\#16](https://github.com/TypistTech/wp-option-store/pull/16) ([TangRufus](https://github.com/TangRufus))
+- Codeception Example: Fix wpRootFolder path [\#15](https://github.com/TypistTech/wp-option-store/pull/15) ([TangRufus](https://github.com/TangRufus))
+
+## [0.1.1](https://github.com/TypistTech/wp-option-store/tree/0.1.1) (2017-10-27)
+[Full Changelog](https://github.com/TypistTech/wp-option-store/compare/0.1.0...0.1.1)
+
+**Closed issues:**
+
+- Better description [\#11](https://github.com/TypistTech/wp-option-store/issues/11)
+
+**Merged pull requests:**
+
+- Version bump 0.1.1 [\#14](https://github.com/TypistTech/wp-option-store/pull/14) ([TangRufus](https://github.com/TangRufus))
 - Misc: Typist Tech code style [\#13](https://github.com/TypistTech/wp-option-store/pull/13) ([TangRufus](https://github.com/TangRufus))
 - Scrutinizer: Remove `align\_assignments` [\#10](https://github.com/TypistTech/wp-option-store/pull/10) ([TangRufus](https://github.com/TangRufus))
 - TravisCI: Do not install Nginx [\#9](https://github.com/TypistTech/wp-option-store/pull/9) ([TangRufus](https://github.com/TangRufus))
