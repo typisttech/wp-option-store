@@ -7,7 +7,7 @@ $kernel = \AspectMock\Kernel::getInstance();
 $kernel->init(
     [
         'debug' => true,
-        'cacheDir' => getenv('TMPDIR') . 'AspectMock/wp-option-store',
+        'cacheDir' => codecept_root_dir('tests/_tmp'),
         'includePaths' => [codecept_root_dir('src')],
         'excludePaths' => [codecept_root_dir('tests')],
     ]
