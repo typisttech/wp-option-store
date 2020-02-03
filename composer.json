@@ -6,7 +6,7 @@
         "wp"
     ],
     "homepage": "https://typist.tech/projects/wp-option-store",
-    "license": "GPL-2.0-or-later",
+    "license": "MIT",
     "authors": [
         {
             "name": "Typist Tech",

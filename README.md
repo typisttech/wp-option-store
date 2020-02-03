@@ -328,5 +328,4 @@ Full list of contributors can be found [here](https://github.com/TypistTech/wp-o
 
 ## License
 
-[WP Option Store](https://github.com/TypistTech/wp-option-store) is licensed under the GPLv2 (or later) from the [Free Software Foundation](http://www.fsf.org/).
-Please see [License File](LICENSE) for more information.
+The MIT License (MIT). Please see [License File](./LICENSE.md) for more information.
