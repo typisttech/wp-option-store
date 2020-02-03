@@ -1,18 +1,4 @@
 <?php
-/**
- * WP Option Store
- *
- * Extending WordPress Options API, read options from places other than database, the OOP way.
- *
- * @package   TypistTech\WPOptionStore
- *
- * @author    Typist Tech <wp-option-store@typist.tech>
- * @copyright 2017-2018 Typist Tech
- * @license   GPL-2.0+
- *
- * @see       https://typist.tech/projects/wp-option-store
- * @see       https://github.com/TypistTech/wp-option-store
- */
 
 declare(strict_types=1);
 
@@ -20,7 +6,7 @@ namespace TypistTech\WPOptionStore;
 
 interface OptionStoreInterface
 {
-    const TRUE_VALUES = [
+    public const TRUE_VALUES = [
         '1',
         'on',
         'On',

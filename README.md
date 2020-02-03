@@ -297,13 +297,10 @@ See [*.suite.example.yml](./tests/) for [Local by Flywheel](https://share.getf.l
 
 Actually run the tests:
 
-``` bash
-$ composer test
+```bash
+composer test
+composer style:check
 ```
-
-We also test all PHP files against [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/) and part of the [WordPress coding standard](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
-
-Check the code style with ``$ composer check-style``.
 
 ## Feedback
 

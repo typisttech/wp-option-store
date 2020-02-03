@@ -30,9 +30,8 @@
     },
     "require-dev": {
         "codeception/aspect-mock": "^2.1",
-        "lucatume/wp-browser": "^2.0",
-        "neronmoon/scriptsdev": "^0.1.1",
-        "wp-coding-standards/wpcs": "^0.13.1"
+        "itinerisltd/itineris-wp-coding-standards": "^0.3.5",
+        "lucatume/wp-browser": "^2.0"
     },
     "suggest": {
         "typisttech/imposter-plugin": "Wrap all composer vendor packages inside your own namespace, to prevent collisions when multiple plugins use this library",
@@ -45,23 +44,19 @@
         }
     },
     "scripts": {
-        "check-style": "phpcs --standard=ruleset.xml --colors -p -s .",
-        "install-dev-extra": [
-            "phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs"
-        ],
-        "pre-tag": [
-            "doctoc README.md",
+        "style:check": "phpcs",
+        "style:fix": "phpcbf",
+        "pretag": [
+            "composer update",
+            "@test",
+            "@style:check",
+            "composer normalize",
+            "npx doctoc README.md",
             "github_changelog_generator --no-verbose"
         ],
         "test": "codecept run",
         "test:coverage": "codecept run --coverage --coverage-xml --coverage-html",
         "test:wpunit": "codecept run wpunit"
-    },
-    "extra": {
-        "scripts-dev": {
-            "post-install-cmd": "@install-dev-extra",
-            "post-update-cmd": "@install-dev-extra"
-        }
     },
     "config": {
         "sort-packages": true
