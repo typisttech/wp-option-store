@@ -38,15 +38,17 @@ Extending WordPress Options API, read options from places other than database, t
   - [What to do when wp.org plugin team tell me to clean up the `vendor` folder?](#what-to-do-when-wporg-plugin-team-tell-me-to-clean-up-the-vendor-folder)
   - [Can two different plugins use this package at the same time?](#can-two-different-plugins-use-this-package-at-the-same-time)
   - [Do you have real life examples that use this package?](#do-you-have-real-life-examples-that-use-this-package)
-- [Support](#support)
+  - [Will you add support for older PHP versions?](#will-you-add-support-for-older-php-versions)
+  - [It looks awesome. Where can I find some more goodies like this?](#it-looks-awesome-where-can-i-find-some-more-goodies-like-this)
+  - [Where can I give :star::star::star::star::star: reviews?](#where-can-i-give-starstarstarstarstar-reviews)
+- [Sponsoring :heart:](#sponsoring-heart)
+  - [GitHub Sponsors Matching Fund](#github-sponsors-matching-fund)
   - [Why don't you hire me?](#why-dont-you-hire-me)
   - [Want to help in other way? Want to be a sponsor?](#want-to-help-in-other-way-want-to-be-a-sponsor)
-- [Developing](#developing)
 - [Running the Tests](#running-the-tests)
 - [Feedback](#feedback)
 - [Change log](#change-log)
 - [Security](#security)
-- [Contributing](#contributing)
 - [Credits](#credits)
 - [License](#license)
 
@@ -267,9 +269,42 @@ Here you go:
 
 *Add your own plugin [here](https://github.com/TypistTech/wp-option-store/edit/master/README.md)*
 
-## Support
+### Will you add support for older PHP versions?
 
-Love `wp-option-store`? Help me maintain it, a [donation here](https://typist.tech/donation/) can help with it.
+Never! This plugin will only work on [actively supported PHP versions](https://secure.php.net/supported-versions.php).
+
+Don't use it on **end of life** or **security fixes only** PHP versions.
+
+### It looks awesome. Where can I find some more goodies like this?
+
+- Articles on Typist Tech's [blog](https://typist.tech)
+- More projects on [Typist Tech's GitHub profile](https://github.com/TypistTech/)
+- More plugins on [TangRufus'](https://profiles.wordpress.org/tangrufus/#content-plugins) wp.org profiles
+- Stay tuned on [Typist Tech's newsletter](https://typist.tech/go/newsletter)
+- Follow [@TangRufus](https://twitter.com/tangrufus) on Twitter
+- Hire [Tang Rufus](https://typist.tech/contact) to build your next awesome site
+
+### Where can I give :star::star::star::star::star: reviews?
+
+Thanks! Glad you like it. It's important to let my know somebody is using this project. Since this is not hosted on wordpress.org, please consider:
+
+- tweet something good with mentioning [@TangRufus](https://twitter.com/tangrufus)
+- :star: star this [Github repo](https://github.com/typisttech/wp-option-store)
+- :eyes: [watch](https://github.com/typisttech/wp-option-store/subscription) this Github repo
+- write blog posts
+- submit [pull requests](https://github.com/typisttech/wp-option-store)
+- [sponsor](https://github.com/sponsors/TangRufus) Tang Rufus to maintain his open source projects
+- hire [Tang Rufus](https://typist.tech/contact) to build your next awesome site
+
+## Sponsoring :heart:
+
+Love `WP Option Store`? Help me maintain it, a [sponsorship here](https://typist.tech/donation/) can help with it.
+
+### GitHub Sponsors Matching Fund
+
+Do you know [GitHub is going to match your sponsorship](https://help.github.com/en/github/supporting-the-open-source-community-with-github-sponsors/about-github-sponsors#about-the-github-sponsors-matching-fund)?
+
+[Sponsor now via GitHub](https://github.com/sponsors/TangRufus) to double your greatness.
 
 ### Why don't you hire me?
 
@@ -279,50 +314,32 @@ Ready to take freelance WordPress jobs. Contact me via the contact form [here](h
 
 Contact: [Tang Rufus](mailto:tangrufus@gmail.com)
 
-## Developing
-
-To setup a developer workable version you should run these commands:
-
-```bash
-$ composer create-project --keep-vcs --no-install typisttech/wp-option-store:dev-master
-$ cd wp-option-store
-$ composer install
-```
-
 ## Running the Tests
 
-[WP Option Store](https://github.com/TypistTech/wp-option-store) run tests on [Codeception](http://codeception.com/) and relies [wp-browser](https://github.com/lucatume/wp-browser) to provide WordPress integration.
-Before testing, you have to install WordPress locally and add a [codeception.yml](http://codeception.com/docs/reference/Configuration) file.
-See [*.suite.example.yml](./tests/) for [Local by Flywheel](https://share.getf.ly/v20q1y) configuration examples.
+Run the tests:
 
-Actually run the tests:
-
-```bash
-composer test
-composer style:check
+``` bash
+$ composer test
+$ composer style:check
 ```
 
 ## Feedback
 
-**Please provide feedback!** We want to make this package useful in as many projects as possible.
+**Please provide feedback!** We want to make this project useful in as many projects as possible.
 Please submit an [issue](https://github.com/TypistTech/wp-option-store/issues/new) and point out what you do and don't like, or fork the project and make suggestions.
 **No issue is too small.**
 
 ## Change log
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](./CHANGELOG.md) for more information on what has changed recently.
 
 ## Security
 
-If you discover any security related issues, please email wp-option-store@typist.tech instead of using the issue tracker.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md) for details.
+If you discover any security related issues, please email [wp-option-store@typist.tech](mailto:wp-option-store@typist.tech) instead of using the issue tracker.
 
 ## Credits
 
-[WP Option Store](https://github.com/TypistTech/wp-option-store) is a [Typist Tech](https://typist.tech) project and maintained by [Tang Rufus](https://twitter.com/Tangrufus), freelance developer for [hire](https://typist.tech/contact/).
+[`WP Option Store`](https://github.com/TypistTech/wp-option-store) is a [Typist Tech](https://typist.tech) project and maintained by [Tang Rufus](https://twitter.com/Tangrufus), freelance developer for [hire](https://typist.tech/contact/).
 
 Full list of contributors can be found [here](https://github.com/TypistTech/wp-option-store/graphs/contributors).
 
