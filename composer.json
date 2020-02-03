@@ -29,9 +29,7 @@
         "php": ">7.1"
     },
     "require-dev": {
-        "codeception/aspect-mock": "^2.1",
-        "itinerisltd/itineris-wp-coding-standards": "^0.3.5",
-        "lucatume/wp-browser": "^2.0"
+        "itinerisltd/itineris-wp-coding-standards": "^0.3.5"
     },
     "suggest": {
         "typisttech/imposter-plugin": "Wrap all composer vendor packages inside your own namespace, to prevent collisions when multiple plugins use this library",
