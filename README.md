@@ -1,15 +1,15 @@
 # WP Option Store
 
-[![Latest Stable Version](https://poser.pugx.org/typisttech/wp-option-store/v/stable)](https://packagist.org/packages/typisttech/wp-option-store)
-[![Total Downloads](https://poser.pugx.org/typisttech/wp-option-store/downloads)](https://packagist.org/packages/typisttech/wp-option-store)
-[![Build Status](https://travis-ci.org/TypistTech/wp-option-store.svg?branch=master)](https://travis-ci.org/TypistTech/wp-option-store)
+[![Packagist](https://img.shields.io/packagist/v/typisttech/wp-option-store.svg?style=flat-square)](https://packagist.org/packages/typisttech/wp-option-store)
+[![Packagist](https://img.shields.io/packagist/dt/typisttech/wp-option-store.svg?style=flat-square)](https://packagist.org/packages/typisttech/wp-option-store)
+![PHP from Packagist](https://img.shields.io/packagist/php-v/TypistTech/wp-option-store?style=flat-square)
+[![CircleCI](https://circleci.com/gh/TypistTech/wp-option-store.svg?style=svg)](https://circleci.com/gh/TypistTech/wp-option-store)
 [![codecov](https://codecov.io/gh/TypistTech/wp-option-store/branch/master/graph/badge.svg)](https://codecov.io/gh/TypistTech/wp-option-store)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TypistTech/wp-option-store/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/TypistTech/wp-option-store/?branch=master)
-[![PHP Versions Tested](http://php-eye.com/badge/typisttech/wp-option-store/tested.svg)](https://travis-ci.org/TypistTech/wp-option-store)
-[![StyleCI](https://styleci.io/repos/106634459/shield?branch=master)](https://styleci.io/repos/106634459)
-[![License](https://poser.pugx.org/typisttech/wp-option-store/license)](https://packagist.org/packages/typisttech/wp-option-store)
-[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://typist.tech/donate/wp-option-store/)
-[![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://typist.tech/contact/)
+[![GitHub](https://img.shields.io/github/license/TypistTech/wp-option-store.svg?style=flat-square)](https://github.com/TypistTech/wp-option-store/blob/master/LICENSE.md)
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=flat-square&logo=github)](https://github.com/sponsors/TangRufus)
+[![Sponsor via PayPal](https://img.shields.io/badge/Sponsor-PayPal-blue.svg?style=flat-square&logo=paypal)](https://typist.tech/donate/wp-option-store/)
+[![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg?style=flat-square)](https://typist.tech/contact/)
+[![Twitter Follow @TangRufus](https://img.shields.io/twitter/follow/TangRufus?style=flat-square&color=1da1f2&logo=twitter)](https://twitter.com/tangrufus)
 
 Extending WordPress Options API, read options from places other than database, the OOP way.
 
